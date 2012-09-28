@@ -1,0 +1,88 @@
+# Set another default user than root for security reasons
+user       www www;
+worker_processes 3;
+daemon off;
+
+worker_rlimit_nofile 8192;
+
+events {
+  worker_connections  8000;
+}
+
+http {
+  include       mime.types;
+
+  default_type  application/octet-stream;
+
+  # ~2 seconds is often enough for HTML/CSS, but connections in
+  # Nginx are cheap, so generally it's safe to increase it
+  keepalive_timeout 20;
+
+  sendfile on;
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  apps.abhishekmunie.com;
+    rewrite  "/(.*)" http://abhishekmunie.com/Apps/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  astronomy.abhishekmunie.com;
+    rewrite  "/(.*)" http://www.facebook.com/abhishekmunie.astronomy/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  beta.abhishekmunie.com;
+    rewrite  "/(.*)" http://nightly.abhishekmunie.com;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  chemistry.abhishekmunie.com;
+    rewrite  "/(.*)" http://www.facebook.com/abhishekmunie.chemistry/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  computer.abhishekmunie.com;
+    rewrite  "/(.*)" http://www.facebook.com/abhishekmunie.computer/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  connect.abhishekmunie.com socialnetworks.abhishekmunie.com;
+    rewrite  "/(.*)" http://abhishekmunie.com/SocialNetworks/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  mathematics.abhishekmunie.com;
+    rewrite  "/(.*)" http://www.facebook.com/abhishekmunie.mathematics/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  me.abhishekmunie.com;
+    rewrite  "/(.*)" http://abhishekmunie.com/Abhishek/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  mysite.abhishekmunie.com;
+    rewrite  "/(.*)" http://abhishekmunie.com/mySite/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  physics.abhishekmunie.com;
+    rewrite  "/(.*)" http://www.facebook.com/abhishekmunie.physics/$1;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  science.abhishekmunie.com;
+    rewrite  "/(.*)" http://abhishekmunie.com/Science/$1;
+  }
+}
