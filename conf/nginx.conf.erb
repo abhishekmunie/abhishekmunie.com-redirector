@@ -16,9 +16,8 @@ http {
 
   # ~2 seconds is often enough for HTML/CSS, but connections in
   # Nginx are cheap, so generally it's safe to increase it
-  keepalive_timeout 20;
+  keepalive_timeout 5;
 
-  sendfile on;
 
   server {
     listen <%= ENV['PORT'] %>;
