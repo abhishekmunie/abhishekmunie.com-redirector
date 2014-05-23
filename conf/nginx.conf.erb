@@ -78,4 +78,10 @@ http {
     server_name  science.abhishekmunie.com;
     return 301 $scheme://abhishekmunie.com/Science$request_uri;
   }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(www\.)?(.+)$;
+    return 301 $scheme://$2;
+  }
 }
