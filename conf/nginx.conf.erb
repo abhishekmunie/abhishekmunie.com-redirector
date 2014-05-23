@@ -13,11 +13,6 @@ http {
 
   default_type  application/octet-stream;
 
-  # ~2 seconds is often enough for HTML/CSS, but connections in
-  # Nginx are cheap, so generally it's safe to increase it
-  keepalive_timeout 5;
-
-
   server {
     listen <%= ENV['PORT'] %>;
     server_name  apps.abhishekmunie.com;
