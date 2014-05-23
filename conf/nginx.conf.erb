@@ -80,6 +80,8 @@ http {
     return 301 $scheme://abhishekmunie.com/Science$request_uri;
   }
 
+  ## abhishekmunie.com aliases redirects
+
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(?<subdomain>.+)\.abhishekmunie\.cf$;
@@ -114,6 +116,7 @@ http {
     server_name  abhishekmunie.ml;
     return 301 $scheme://abhishekmunie.com$request_uri;
   }
+
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(?<subdomain>.+)\.abhishekmunie\.tk$;
@@ -126,6 +129,128 @@ http {
     return 301 $scheme://abhishekmunie.com$request_uri;
   }
 
+  ## aseinc.cf aliases redirects
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.aseinc\.ga$;
+    return 301 $scheme://$subdomain.aseinc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  aseinc.ga;
+    return 301 $scheme://aseinc.com$request_uri;
+  }
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.aseinc\.ml$;
+    return 301 $scheme://$subdomain.aseinc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  aseinc.ml;
+    return 301 $scheme://aseinc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.aseinc\.tk$;
+    return 301 $scheme://$subdomain.aseinc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  aseinc.tk;
+    return 301 $scheme://aseinc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.ase-inc\.cf$;
+    return 301 $scheme://$subdomain.ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ase-inc.cf;
+    return 301 $scheme://ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.ase-inc\.ga$;
+    return 301 $scheme://$subdomain.ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ase-inc.ga;
+    return 301 $scheme://ase-inc.com$request_uri;
+  }
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.ase-inc\.ml$;
+    return 301 $scheme://$subdomain.ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ase-inc.ml;
+    return 301 $scheme://ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.ase-inc\.tk$;
+    return 301 $scheme://$subdomain.ase-inc.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ase-inc.tk;
+    return 301 $scheme://ase-inc.com$request_uri;
+  }
+
+  ## section9.cf aliases redirects
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.section9\.ga$;
+    return 301 $scheme://$subdomain.section9.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  section9.ga;
+    return 301 $scheme://section9.com$request_uri;
+  }
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.section9\.ml$;
+    return 301 $scheme://$subdomain.section9.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  section9.ml;
+    return 301 $scheme://section9.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  ~^(?<subdomain>.+)\.section9\.tk$;
+    return 301 $scheme://$subdomain.section9.com$request_uri;
+  }
+
+  server {
+    listen <%= ENV['PORT'] %>;
+    server_name  section9.tk;
+    return 301 $scheme://section9.com$request_uri;
+  }
+
+  ## www to root redirects
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(www\.)?(.+)$;
