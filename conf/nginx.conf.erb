@@ -12,6 +12,7 @@ events {
 http {
 
   default_type  application/octet-stream;
+  server_name_in_redirect off;
 
   server {
     listen <%= ENV['PORT'] %>;
