@@ -84,48 +84,13 @@ http {
 
   server {
     listen <%= ENV['PORT'] %>;
-    server_name  ~^(?<subdomain>.+)\.abhishekmunie\.cf$;
+    server_name  ~^(?<subdomain>.+)\.abhishekmunie\..*$;
     return 301 $scheme://$subdomain.abhishekmunie.com$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
-    server_name  abhishekmunie.cf;
-    return 301 $scheme://abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  ~^(?<subdomain>.+)\.abhishekmunie\.ga$;
-    return 301 $scheme://$subdomain.abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  abhishekmunie.ga;
-    return 301 $scheme://abhishekmunie.com$request_uri;
-  }
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  ~^(?<subdomain>.+)\.abhishekmunie\.ml$;
-    return 301 $scheme://$subdomain.abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  abhishekmunie.ml;
-    return 301 $scheme://abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  ~^(?<subdomain>.+)\.abhishekmunie\.tk$;
-    return 301 $scheme://$subdomain.abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  abhishekmunie.tk;
+    server_name  abhishekmunie..*;
     return 301 $scheme://abhishekmunie.com$request_uri;
   }
 
