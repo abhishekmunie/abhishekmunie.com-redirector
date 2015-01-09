@@ -93,7 +93,7 @@ http {
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(?<subdomain>.+)\.aseinc\.ga$;
-    return 301 $scheme://${subdomain}.aseinc.com$request_uri;
+    return 301 $scheme://$subdomain.aseinc.com$request_uri;
   }
 
   server {
