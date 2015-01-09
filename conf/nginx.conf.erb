@@ -17,67 +17,67 @@ http {
   server {
     listen <%= ENV['PORT'] %>;
     server_name  apps.abhishekmunie.com;
-    return 301 https://abhishekmunie.com/Apps$request_uri;
+    return 301 $scheme://abhishekmunie.com/Apps$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  astronomy.abhishekmunie.com;
-    return 301 https://www.facebook.com/abhishekmunie.astronomy$request_uri;
+    return 301 $scheme://www.facebook.com/abhishekmunie.astronomy$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  beta.abhishekmunie.com;
-    return 301 https://nightly.abhishekmunie.com$request_uri;
+    return 301 $scheme://nightly.abhishekmunie.com$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  chemistry.abhishekmunie.com;
-    return 301 https://www.facebook.com/abhishekmunie.chemistry$request_uri;
+    return 301 $scheme://www.facebook.com/abhishekmunie.chemistry$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  computer.abhishekmunie.com;
-    return 301 https://www.facebook.com/abhishekmunie.computer$request_uri;
+    return 301 $scheme://www.facebook.com/abhishekmunie.computer$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  connect.abhishekmunie.com socialnetworks.abhishekmunie.com;
-    return 301 https://abhishekmunie.com/SocialNetworks$request_uri;
+    return 301 $scheme://abhishekmunie.com/SocialNetworks$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  mathematics.abhishekmunie.com;
-    return 301 https://www.facebook.com/abhishekmunie.mathematics$request_uri;
+    return 301 $scheme://www.facebook.com/abhishekmunie.mathematics$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  me.abhishekmunie.com;
-    return 301 https://abhishekmunie.com/Abhishek$request_uri;
+    return 301 $scheme://abhishekmunie.com/Abhishek$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  mysite.abhishekmunie.com;
-    return 301 https://abhishekmunie.com/mySite$request_uri;
+    return 301 $scheme://abhishekmunie.com/mySite$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  physics.abhishekmunie.com;
-    return 301 https://www.facebook.com/abhishekmunie.physics$request_uri;
+    return 301 $scheme://www.facebook.com/abhishekmunie.physics$request_uri;
   }
 
   server {
     listen <%= ENV['PORT'] %>;
     server_name  science.abhishekmunie.com;
-    return 301 https://abhishekmunie.com/Science$request_uri;
+    return 301 $scheme://abhishekmunie.com/Science$request_uri;
   }
 
   ## abhishekmunie.com aliases redirects
@@ -85,7 +85,7 @@ http {
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(?<subdomain>.+\.)abhishekmunie\..+$;
-    return 301 https://${subdomain}abhishekmunie.com$request_uri;
+    return 301 $scheme://${subdomain}abhishekmunie.com$request_uri;
   }
 
   ## aseinc.cf aliases redirects
@@ -213,6 +213,6 @@ http {
   server {
     listen <%= ENV['PORT'] %>;
     server_name  ~^(www\.)?(.+)$;
-    return 301 $scheme://$2;
+    return 301 $scheme://$1;
   }
 }
