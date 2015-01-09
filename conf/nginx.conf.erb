@@ -212,7 +212,7 @@ http {
   ## www to root redirects
   server {
     listen <%= ENV['PORT'] %>;
-    server_name  ~^(www\.)?(?.+)$;
-    return 301 $scheme://$1;
+    server_name  ~^www\.(?<domain>.+\..+)$;
+    return 301 $scheme://${domain};
   }
 }
