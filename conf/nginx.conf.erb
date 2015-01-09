@@ -84,14 +84,8 @@ http {
 
   server {
     listen <%= ENV['PORT'] %>;
-    server_name  ~^(?<subdomain>.+)\.abhishekmunie\..+$;
-    return 301 https://$subdomain.abhishekmunie.com$request_uri;
-  }
-
-  server {
-    listen <%= ENV['PORT'] %>;
-    server_name  abhishekmunie\..+;
-    return 301 https://abhishekmunie.com$request_uri;
+    server_name  ~^(?<subdomain>.+\.)abhishekmunie\..+$;
+    return 301 https://$subdomainabhishekmunie.com$request_uri;
   }
 
   ## aseinc.cf aliases redirects
